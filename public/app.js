@@ -1,14 +1,6 @@
 "use strict";
-class Invoice {
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    fromat() {
-        return `owner: ${this.client} details:${this.details} amount: ${this.amount}`;
-    }
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+const invoice_1 = require("./classes/invoice");
 //we use as to apply a certain interface to the type;
 const newItemFrom = document.querySelector('.new-item-from');
 //inputs
@@ -20,5 +12,5 @@ newItemFrom.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
 });
-const invOne = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
-console.log(invOne.fromat());
+const invOne = new invoice_1.Invoice(toFrom.value, details.value, amount.valueAsNumber);
+console.log(invOne.format());

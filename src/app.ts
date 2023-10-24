@@ -1,14 +1,4 @@
-class Invoice {
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ) {}
-
-  fromat(): string {
-    return `owner: ${this.client} details:${this.details} amount: ${this.amount}`;
-  }
-}
+import { Invoice } from './classes/invoice';
 
 //we use as to apply a certain interface to the type;
 const newItemFrom = document.querySelector('.new-item-from') as HTMLFormElement;
@@ -27,4 +17,4 @@ newItemFrom.addEventListener('submit', (e: Event) => {
 
 const invOne = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
 
-console.log(invOne.fromat());
+console.log(invOne.format());
