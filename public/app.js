@@ -17,3 +17,30 @@ newItemForm.addEventListener('submit', (e) => {
     console.log(doc.format());
     listElement.render(doc, 'hi form the render method', 'end');
 });
+//GENERICS
+const addUid = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+console.log(addUid({ name: 'mohamed', age: 21 }));
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["AUTHOR"] = 0] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 1] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 2] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 3] = "PERSON";
+    ResourceType[ResourceType["BOOK"] = 4] = "BOOK";
+})(ResourceType || (ResourceType = {}));
+const docOne = {
+    name: 'mohamed',
+    age: 21,
+    resourceType: ResourceType.AUTHOR,
+    data: 'hello',
+};
+const docTwo = {
+    name: 'mohamed',
+    age: 21,
+    resourceType: ResourceType.AUTHOR,
+    data: ['hello', 'world'],
+};
+let tub = ['mohamed', true, 21];

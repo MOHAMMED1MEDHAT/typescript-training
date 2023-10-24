@@ -28,3 +28,43 @@ newItemForm.addEventListener('submit', (e: Event) => {
 
   listElement.render(doc, 'hi form the render method', 'end');
 });
+
+//GENERICS
+const addUid = <T extends object>(obj: T): object => {
+  let uid = Math.floor(Math.random() * 100);
+
+  return { ...obj, uid };
+};
+
+console.log(addUid({ name: 'mohamed', age: 21 }));
+
+enum ResourceType {
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+  BOOK,
+}
+
+interface IRescourse<T> {
+  name: string;
+  age: number;
+  resourceType: ResourceType;
+  data: T;
+}
+
+const docOne: IRescourse<string> = {
+  name: 'mohamed',
+  age: 21,
+  resourceType: ResourceType.AUTHOR,
+  data: 'hello',
+};
+
+const docTwo: IRescourse<string[]> = {
+  name: 'mohamed',
+  age: 21,
+  resourceType: ResourceType.AUTHOR,
+  data: ['hello', 'world'],
+};
+
+let tub: [string, boolean, number] = ['mohamed', true, 21];
