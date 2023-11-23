@@ -26,7 +26,7 @@ newItemForm.addEventListener('submit', (e: Event) => {
 
   console.log(doc.format());
 
-  listElement.render(doc, 'hi form the render method', 'end');
+  listElement.render(doc, 'rendering', 'end');
 });
 
 //GENERICS
