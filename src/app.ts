@@ -24,7 +24,7 @@ newItemForm.addEventListener('submit', (e: Event) => {
     amount.valueAsNumber
   );
 
-  console.log(doc.format());
+  // console.log(doc.format());
 
   listElement.render(doc, 'rendering', 'end');
 });
