@@ -42,7 +42,10 @@ enum ResourceType {
   AUTHOR,
   FILM,
   DIRECTOR,
-  PERSON,
+}
+
+enum ResourceType {
+  PERSON = 3,
   BOOK,
 }
 
